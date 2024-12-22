@@ -1,0 +1,16 @@
+D:\Projects\WindowsService\infrastructure\bin\Debug\net9.0\infrastructure.deps.json
+D:\Projects\WindowsService\infrastructure\bin\Debug\net9.0\infrastructure.dll
+D:\Projects\WindowsService\infrastructure\bin\Debug\net9.0\infrastructure.pdb
+D:\Projects\WindowsService\infrastructure\bin\Debug\net9.0\Domain.dll
+D:\Projects\WindowsService\infrastructure\bin\Debug\net9.0\Domain.pdb
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.csproj.AssemblyReference.cache
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.AssemblyInfoInputs.cache
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.AssemblyInfo.cs
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.csproj.CoreCompileInputs.cache
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.sourcelink.json
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastr.D83B591B.Up2Date
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.dll
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\refint\infrastructure.dll
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\infrastructure.pdb
+D:\Projects\WindowsService\infrastructure\obj\Debug\net9.0\ref\infrastructure.dll
