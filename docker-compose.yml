@@ -6,7 +6,7 @@
       dockerfile: WindowsService/Dockerfile
 
     environment:
-       RABBITMQ_HOST: rabbitmq  # استفاده از نام سرویس RabbitMQ
+       RABBITMQ_HOST: rabbitmq  
 
     depends_on:
      - rabbitmq
@@ -16,5 +16,5 @@
     image: "rabbitmq:management"
     container_name: rabbitmq
     ports:
-      - "15672:15672"  # رابط مدیریت RabbitMQ
-      - "5672:5672"    # پورت اصلی برای اتصال به RabbitMQ
+      - "15672:15672"  
+      - "5672:5672"   

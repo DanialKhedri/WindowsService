@@ -66,7 +66,7 @@ public class RabbitMqService : IMessageBrokerService
                 cancellationToken: cancellationToken  // پشتیبانی از لغو عملیات
             );
 
-            _logger.LogInformation("Message published to RabbitMQ: 5000 Data");
+            _logger.LogInformation("Message published to RabbitMQ: 5500 Data");
         }
         catch (Exception ex)
         {

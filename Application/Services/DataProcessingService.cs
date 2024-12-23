@@ -27,7 +27,7 @@ public class DataProcessingService
     private List<DataPoint> GenerateDataPoints()
     {
         var dataPoints = new List<DataPoint>();
-        for (int i = 0; i < 5000; i++)  // تولید 5000 داده در هر ثانیه
+        for (int i = 0; i < 5500; i++)  // تولید 5500 داده در هر ثانیه
         {
             dataPoints.Add(new DataPoint
             {
