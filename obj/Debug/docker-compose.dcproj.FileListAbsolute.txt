@@ -45,3 +45,6 @@ D:\Projects\WindowsService\bin\Debug\infrastructure.pdb
 D:\Projects\WindowsService\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
 D:\Projects\WindowsService\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
 D:\Projects\WindowsService\obj\Debug\docker-c.35A3FFBA.Up2Date
+D:\Projects\WindowsService\bin\Debug\Microsoft.Extensions.Hosting.WindowsServices.dll
+D:\Projects\WindowsService\bin\Debug\System.ServiceProcess.ServiceController.dll
+D:\Projects\WindowsService\bin\Debug\TopShelf.ServiceInstaller.dll

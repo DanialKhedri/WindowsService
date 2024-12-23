@@ -11,6 +11,7 @@
           "Application": "1.0.0",
           "Domain": "1.0.0",
           "Microsoft.Extensions.Hosting": "9.0.0",
+          "Microsoft.Extensions.Hosting.WindowsServices": "9.0.0",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.21.0",
           "Newtonsoft.Json": "13.0.3",
           "RabbitMQ.Client": "7.0.0",
@@ -293,6 +294,19 @@
           }
         }
       },
+      "Microsoft.Extensions.Hosting.WindowsServices/9.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Hosting": "9.0.0",
+          "Microsoft.Extensions.Logging.EventLog": "9.0.0",
+          "System.ServiceProcess.ServiceController": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Hosting.WindowsServices.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
       "Microsoft.Extensions.Logging/9.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": "9.0.0",
@@ -428,7 +442,33 @@
           }
         }
       },
+      "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.21.0": {},
+      "Microsoft.Win32.Registry/4.7.0": {
+        "dependencies": {
+          "System.Security.AccessControl": "4.7.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "Microsoft.Win32.SystemEvents/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -472,6 +512,32 @@
         }
       },
       "System.IO.Pipelines/8.0.0": {},
+      "System.Security.AccessControl/4.7.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "System.Security.Principal.Windows": "4.7.0"
+        }
+      },
+      "System.Security.Principal.Windows/4.7.0": {},
+      "System.ServiceProcess.ServiceController/9.0.0": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "9.0.0"
+        },
+        "runtime": {
+          "lib/net9.0/System.ServiceProcess.ServiceController.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net9.0/System.ServiceProcess.ServiceController.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
       "System.Threading.RateLimiting/8.0.0": {
         "runtime": {
           "lib/net8.0/System.Threading.RateLimiting.dll": {
@@ -480,9 +546,23 @@
           }
         }
       },
+      "TopShelf.ServiceInstaller/4.3.0": {
+        "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
+          "Microsoft.Win32.SystemEvents": "4.7.0",
+          "System.ServiceProcess.ServiceController": "9.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/TopShelf.ServiceInstaller.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.0.0"
+          }
+        }
+      },
       "Application/1.0.0": {
         "dependencies": {
           "Domain": "1.0.0",
+          "Microsoft.Extensions.Hosting.WindowsServices": "9.0.0",
           "Newtonsoft.Json": "13.0.3",
           "RabbitMQ.Client": "7.0.0"
         },
@@ -495,6 +575,7 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Hosting.WindowsServices": "9.0.0",
           "Newtonsoft.Json": "13.0.3",
           "RabbitMQ.Client": "7.0.0"
         },
@@ -510,8 +591,10 @@
           "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.Extensions.Hosting.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Hosting.WindowsServices": "9.0.0",
           "Newtonsoft.Json": "13.0.3",
-          "RabbitMQ.Client": "7.0.0"
+          "RabbitMQ.Client": "7.0.0",
+          "TopShelf.ServiceInstaller": "4.3.0"
         },
         "runtime": {
           "infrastructure.dll": {
@@ -682,6 +765,13 @@
       "path": "microsoft.extensions.hosting.abstractions/9.0.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.9.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Hosting.WindowsServices/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OQ7aTejEpkj1OPibhvKYhygUSoKQ+O5YYuBmJxOCC3+F5v7d4szYfvOGd8aegK8/ARFTJqpeXZq1wyIwEza6lg==",
+      "path": "microsoft.extensions.hosting.windowsservices/9.0.0",
+      "hashPath": "microsoft.extensions.hosting.windowsservices.9.0.0.nupkg.sha512"
+    },
     "Microsoft.Extensions.Logging/9.0.0": {
       "type": "package",
       "serviceable": true,
@@ -752,12 +842,33 @@
       "path": "microsoft.extensions.primitives/9.0.0",
       "hashPath": "microsoft.extensions.primitives.9.0.0.nupkg.sha512"
     },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
     "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.21.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-8NudeHOE56YsY59HYY89akRMup8Ho+7Y3cADTGjajjWroXVU9RQai2nA6PfteB8AuzmRHZ5NZQB2BnWhQEul5g==",
       "path": "microsoft.visualstudio.azure.containers.tools.targets/1.21.0",
       "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.Registry/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
+      "path": "microsoft.win32.registry/4.7.0",
+      "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+      "path": "microsoft.win32.systemevents/4.7.0",
+      "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
@@ -787,12 +898,40 @@
       "path": "system.io.pipelines/8.0.0",
       "hashPath": "system.io.pipelines.8.0.0.nupkg.sha512"
     },
+    "System.Security.AccessControl/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JECvTt5aFF3WT3gHpfofL2MNNP6v84sxtXxpqhLBCcDRzqsPBmHhQ6shv4DwwN2tRlzsUxtb3G9M3763rbXKDg==",
+      "path": "system.security.accesscontrol/4.7.0",
+      "hashPath": "system.security.accesscontrol.4.7.0.nupkg.sha512"
+    },
+    "System.Security.Principal.Windows/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
+      "path": "system.security.principal.windows/4.7.0",
+      "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "System.ServiceProcess.ServiceController/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ciFstNZEWYf40HbwzdQLdgQpgpnjkleC1z0jMqBKRdkEQqQ6I/Aht0x9fTBODnaQTtcF+scvrdimoDbfNap/aQ==",
+      "path": "system.serviceprocess.servicecontroller/9.0.0",
+      "hashPath": "system.serviceprocess.servicecontroller.9.0.0.nupkg.sha512"
+    },
     "System.Threading.RateLimiting/8.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-7mu9v0QDv66ar3DpGSZHg9NuNcxDaaAcnMULuZlaTpP9+hwXhrxNGsF5GmLkSHxFdb5bBc1TzeujsRgTrPWi+Q==",
       "path": "system.threading.ratelimiting/8.0.0",
       "hashPath": "system.threading.ratelimiting.8.0.0.nupkg.sha512"
+    },
+    "TopShelf.ServiceInstaller/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z+jcfvIg3uewe9lBkWpXslxEafqPusV7T4B/Y2TiBdixnfbfFG19YgnnsZMlP5kG9zzPsx6VceYUNzfxVEQjcA==",
+      "path": "topshelf.serviceinstaller/4.3.0",
+      "hashPath": "topshelf.serviceinstaller.4.3.0.nupkg.sha512"
     },
     "Application/1.0.0": {
       "type": "project",

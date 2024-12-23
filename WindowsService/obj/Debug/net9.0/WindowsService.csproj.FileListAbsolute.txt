@@ -60,3 +60,9 @@ D:\Projects\WindowsService\WindowsService\obj\Debug\net9.0\refint\WindowsService
 D:\Projects\WindowsService\WindowsService\obj\Debug\net9.0\WindowsService.pdb
 D:\Projects\WindowsService\WindowsService\obj\Debug\net9.0\WindowsService.genruntimeconfig.cache
 D:\Projects\WindowsService\WindowsService\obj\Debug\net9.0\ref\WindowsService.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\Microsoft.Extensions.Hosting.WindowsServices.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\System.ServiceProcess.ServiceController.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\TopShelf.ServiceInstaller.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\WindowsService\WindowsService\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.ServiceProcess.ServiceController.dll
