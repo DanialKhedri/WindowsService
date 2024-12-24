@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
-using System.Threading;
 namespace infrastructure.MessageBroker;
 
 public class RabbitMqService : IMessageBrokerService
@@ -23,7 +22,7 @@ public class RabbitMqService : IMessageBrokerService
     private async Task InitializeMessageBroker()
     {
         // اتصال به RabbitMQ
-        var factory = new ConnectionFactory() { HostName = "rabbitmq" };
+        var factory = new ConnectionFactory() { HostName = "localhost", Port = 5672 };
         _connection = await factory.CreateConnectionAsync();
         _channel = await _connection.CreateChannelAsync();
 
@@ -35,7 +34,6 @@ public class RabbitMqService : IMessageBrokerService
              exclusive: false,    // صف اختصاصی نباشد
              autoDelete: false,   // صف حذف خودکار نشود
              arguments: null);    // هیچ آرگومانی برای صف نداریم
-
 
 
     }

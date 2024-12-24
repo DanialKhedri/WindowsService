@@ -1,0 +1,22 @@
+name: dockercompose13126526134037408131
+services:
+  windowsservice:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: WindowsService/Dockerfile
+    environment:
+      DOTNET_ENVIRONMENT: Development
+    image: windowsservice
+    networks:
+      app_network: null
+    volumes:
+      - type: bind
+        source: C:\Users\King-PC\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  app_network:
+    name: dockercompose13126526134037408131_app_network
+    driver: bridge

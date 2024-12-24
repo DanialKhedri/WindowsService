@@ -1,0 +1,36 @@
+name: dockercompose13126526134037408131
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+  windowsservice:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: WindowsService/Dockerfile
+    container_name: WindowsService
+    environment:
+      DOTNET_ENVIRONMENT: Development
+    image: WindowsService
+    networks:
+      default: null
+    volumes:
+      - type: bind
+        source: C:\Users\King-PC\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose13126526134037408131_default

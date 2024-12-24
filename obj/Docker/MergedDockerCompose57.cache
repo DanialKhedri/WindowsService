@@ -1,0 +1,138 @@
+name: dockercompose13126526134037408131
+services:
+  Asp-WebApi-Subscriber:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: Asp-WebApi-Subscriber/Dockerfile
+    container_name: Asp-WebApi-Subscriber
+    depends_on:
+      WindowsService:
+        condition: service_started
+        required: true
+      rabbitmq:
+        condition: service_started
+        required: true
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      WINDOWS_SERVICE_HOST: WindowsService
+    image: Asp-WebApi-Subscriber
+    networks:
+      my_network: null
+  WindowsService:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: WindowsService/Dockerfile
+    container_name: WindowsService
+    image: WindowsService
+    networks:
+      my_network: null
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management
+    networks:
+      my_network: null
+    ports:
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: rabbitmq_data
+        target: /var/lib/rabbitmq
+        volume: {}
+  windowsservice:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: WindowsService
+      target: base
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      DOTNET_ENVIRONMENT: Development
+      NUGET_FALLBACK_PACKAGES: /.nuget/fallbackpackages
+    image: windowsservice:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages --additionalProbingPath /.nuget/fallbackpackages  "/app/bin/Debug/net9.0/WindowsService.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    tty: true
+    volumes:
+      - type: bind
+        source: C:\Users\King-PC\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Projects\WindowsService\WindowsService
+        target: /app
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\Projects\WindowsService
+        target: /src
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\King-PC\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\King-PC\.nuget\packages
+        target: /.nuget/packages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages
+        target: /.nuget/fallbackpackages
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\King-PC\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\VS\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net6.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\VS\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose13126526134037408131_default
+  my_network:
+    name: dockercompose13126526134037408131_my_network
+    driver: bridge
+volumes:
+  rabbitmq_data:
+    name: dockercompose13126526134037408131_rabbitmq_data
+    driver: local

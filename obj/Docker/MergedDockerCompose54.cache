@@ -1,0 +1,67 @@
+name: dockercompose13126526134037408131
+services:
+  aspwebapi-subscriber:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: AspWebApi-Subscriber/Dockerfile
+    container_name: aspwebapi-subscriber
+    depends_on:
+      rabbitmq:
+        condition: service_started
+        required: true
+      windowsservice:
+        condition: service_started
+        required: true
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      WINDOWS_SERVICE_HOST: windowsservice
+    image: aspwebapisubscriber
+    networks:
+      my_network: null
+  rabbitmq:
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_PASS: password
+      RABBITMQ_DEFAULT_USER: user
+    image: rabbitmq:management
+    networks:
+      my_network: null
+    ports:
+      - mode: ingress
+        target: 15672
+        published: "15672"
+        protocol: tcp
+      - mode: ingress
+        target: 5672
+        published: "5672"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: rabbitmq_data
+        target: /var/lib/rabbitmq
+        volume: {}
+  windowsservice:
+    build:
+      context: D:\Projects\WindowsService
+      dockerfile: WindowsService/Dockerfile
+    container_name: windowsservice
+    environment:
+      DOTNET_ENVIRONMENT: Development
+    image: windowsservice
+    networks:
+      my_network: null
+    volumes:
+      - type: bind
+        source: C:\Users\King-PC\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  my_network:
+    name: dockercompose13126526134037408131_my_network
+    driver: bridge
+volumes:
+  rabbitmq_data:
+    name: dockercompose13126526134037408131_rabbitmq_data
+    driver: local
