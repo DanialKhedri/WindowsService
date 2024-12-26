@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WindowsService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad4a7b1753ea3b6f4bf6c8262ad2c60c118e0075")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c292dcbdd523b841e5fbf46f10708db765df77a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WindowsService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WindowsService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

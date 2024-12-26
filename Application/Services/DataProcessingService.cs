@@ -1,10 +1,5 @@
 ﻿using Domain.Entites;
 using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services;
 
@@ -27,6 +22,7 @@ public class DataProcessingService
     private List<DataPoint> GenerateDataPoints()
     {
         var dataPoints = new List<DataPoint>();
+
         for (int i = 0; i < 5500; i++)  // تولید 5500 داده در هر ثانیه
         {
             dataPoints.Add(new DataPoint
