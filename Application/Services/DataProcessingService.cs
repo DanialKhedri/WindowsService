@@ -33,7 +33,7 @@ public class DataProcessingService
             {
                 Name = $"DataPoint{i}",
                 Value = new Random().Next(1, 1000),
-                Time = DateTime.UtcNow
+                Time = DateTime.Now
             });
         }
         return dataPoints;

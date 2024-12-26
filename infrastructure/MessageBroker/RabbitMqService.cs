@@ -1,9 +1,14 @@
-﻿using Domain.Entites;
+﻿
+#region Usings
+using Domain.Entites;
 using Domain.Interfaces;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
+#endregion
+
+
 namespace infrastructure.MessageBroker;
 
 public class RabbitMqService : IMessageBrokerService
@@ -72,6 +77,5 @@ public class RabbitMqService : IMessageBrokerService
             _logger.LogError(ex, "Error while publishing message to RabbitMQ.");
         }
     }
-
 
 }

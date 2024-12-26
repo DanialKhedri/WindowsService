@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Projects\\WindowsService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{666D661C-B014-4777-9DD6-87BD95AF29C4}|Application\\Application.csproj|d:\\projects\\windowsservice\\application\\services\\dataprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{666D661C-B014-4777-9DD6-87BD95AF29C4}|Application\\Application.csproj|solutionrelative:application\\services\\dataprocessingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2C345A0E-FC54-4139-B402-CF6B97021C50}|infrastructure\\infrastructure.csproj|d:\\projects\\windowsservice\\infrastructure\\messagebroker\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2C345A0E-FC54-4139-B402-CF6B97021C50}|infrastructure\\infrastructure.csproj|solutionrelative:infrastructure\\messagebroker\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,12 +18,8 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -49,20 +49,29 @@
               "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataProcessingService.cs",
+              "DocumentMoniker": "D:\\Projects\\WindowsService\\Application\\Services\\DataProcessingService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\DataProcessingService.cs",
+              "ToolTip": "D:\\Projects\\WindowsService\\Application\\Services\\DataProcessingService.cs",
+              "RelativeToolTip": "Application\\Services\\DataProcessingService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T00:58:55.782Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RabbitMqService.cs",
               "DocumentMoniker": "D:\\Projects\\WindowsService\\infrastructure\\MessageBroker\\RabbitMqService.cs",
               "RelativeDocumentMoniker": "infrastructure\\MessageBroker\\RabbitMqService.cs",
               "ToolTip": "D:\\Projects\\WindowsService\\infrastructure\\MessageBroker\\RabbitMqService.cs",
               "RelativeToolTip": "infrastructure\\MessageBroker\\RabbitMqService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-24T12:13:50.591Z",
+              "WhenOpened": "2024-12-26T00:58:37.59Z",
               "EditorCaption": ""
             }
           ]
